@@ -5,6 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/16 23:14:12 by zelkalai          #+#    #+#              #
+#    Updated: 2023/11/16 23:15:23 by zelkalai         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:02:54 by zelkalai          #+#    #+#              #
 #    Updated: 2023/11/15 15:57:11 by zelkalai         ###   ########.fr        #
 #                                                                              #
@@ -51,12 +63,12 @@ SRC = 	ft_isalpha.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
 
-SRCB:	ft_lstnew\
+#SRCB:	ft_lstnew\
 
 
 OBJ = $(SRC:.c=.o)
 
-OBJB = $(SRCB:.c=.o)
+#OBJB = $(SRCB:.c=.o)
 
 all: $(NAME)
 
@@ -66,15 +78,15 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-bonus: $(NAME) $(OBJB)
-	$(AR) $(NAME) $(OBJB)
+#bonus: $(NAME) $(OBJB)
+#	$(AR) $(NAME) $(OBJB)
 
 clean:
-	$(RM) $(OBJ) $(OBJB)
+	$(RM) $(OBJ) #$(OBJB)
 
 fclean: clean
-	$(RM) $(NAME) $(bonus)
+	$(RM) $(NAME) #$(bonus)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re #bonus
