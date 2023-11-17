@@ -6,7 +6,7 @@
 #    By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:02:54 by zelkalai          #+#    #+#              #
-#    Updated: 2023/11/16 23:30:33 by zelkalai         ###   ########.fr        #
+#    Updated: 2023/11/17 14:46:13 by zelkalai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,12 +51,11 @@ SRC = 	ft_isalpha.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
 
-#SRCB:	ft_lstnew\
-
-
 OBJ = $(SRC:.c=.o)
 
-#OBJB = $(SRCB:.c=.o)
+SRCB =	ft_lstnew.c\
+
+OBJB = $(SRCB:.c=.o)
 
 all: $(NAME)
 
@@ -66,15 +65,15 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-#bonus: $(NAME) $(OBJB)
-#	$(AR) $(NAME) $(OBJB)
+bonus: $(NAME) $(OBJB)
+	$(AR) $(NAME) $(OBJB) $(OBJ)
 
 clean:
-	$(RM) $(OBJ) #$(OBJB)
+	$(RM) $(OBJ) $(OBJB)
 
 fclean: clean
-	$(RM) $(NAME) #$(bonus)
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re #bonus
+.PHONY: all clean fclean re bonus
