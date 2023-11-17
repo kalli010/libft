@@ -6,7 +6,7 @@
 #    By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:02:54 by zelkalai          #+#    #+#              #
-#    Updated: 2023/11/17 14:46:13 by zelkalai         ###   ########.fr        #
+#    Updated: 2023/11/17 15:36:03 by zelkalai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SRC = 	ft_isalpha.c\
 OBJ = $(SRC:.c=.o)
 
 SRCB =	ft_lstnew.c\
+	ft_lstadd_front.c\
 
 OBJB = $(SRCB:.c=.o)
 
