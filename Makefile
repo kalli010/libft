@@ -6,7 +6,7 @@
 #    By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:02:54 by zelkalai          #+#    #+#              #
-#    Updated: 2023/11/18 06:41:40 by zelkalai         ###   ########.fr        #
+#    Updated: 2023/11/19 00:19:17 by zelkalai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,8 @@ SRCB =	ft_lstnew.c\
 	ft_lstlast.c\
 	ft_lstadd_back.c\
 	ft_lstdelone.c\
+	ft_lstclear.c\
+	ft_lstiter.c\
 
 OBJB = $(SRCB:.c=.o)
 
@@ -67,8 +69,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-bonus: $(NAME) $(OBJB)
-	$(AR) $(NAME) $(OBJB) $(OBJ)
+bonus:	$(OBJB)
+	$(AR) $(NAME) $(OBJB)
 
 clean:
 	$(RM) $(OBJ) $(OBJB)
