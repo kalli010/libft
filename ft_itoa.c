@@ -6,7 +6,7 @@
 /*   By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 20:45:43 by zelkalai          #+#    #+#             */
-/*   Updated: 2023/11/14 23:37:51 by zelkalai         ###   ########.fr       */
+/*   Updated: 2023/11/17 22:35:19 by zelkalai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_itoa(int n)
 		len = 1;
 	else
 		len = 0;
-	while (temp != '\0')
+	while (temp != 0)
 	{
 		len++;
 		temp /= 10;
