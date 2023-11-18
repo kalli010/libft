@@ -6,7 +6,7 @@
 #    By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:02:54 by zelkalai          #+#    #+#              #
-#    Updated: 2023/11/18 01:25:55 by zelkalai         ###   ########.fr        #
+#    Updated: 2023/11/18 06:41:40 by zelkalai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ SRCB =	ft_lstnew.c\
 	ft_lstsize.c\
 	ft_lstlast.c\
 	ft_lstadd_back.c\
+	ft_lstdelone.c\
 
 OBJB = $(SRCB:.c=.o)
 
