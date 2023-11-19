@@ -1,6 +1,6 @@
 
 # libft
-first project in 1337 school
+My first project in 1337 school
 ## About
 Libft is a comprehensive library that includes a variety of utility functions. This project aims to provide a reliable and efficient set of functions that can be reused in various programming tasks.
 
