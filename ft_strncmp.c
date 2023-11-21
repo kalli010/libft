@@ -6,7 +6,7 @@
 /*   By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:14:11 by zelkalai          #+#    #+#             */
-/*   Updated: 2023/11/14 16:21:52 by zelkalai         ###   ########.fr       */
+/*   Updated: 2023/11/21 01:20:50 by zelkalai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (n == 0)
 		return (0);
-	while (n > 0 && *s1 != '\0')
+	while (n > 0 && (*s1 || *s2))
 	{
 		if (*s1 != *s2)
 			return (*s1 - *s2);
@@ -24,7 +24,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		n--;
 	}
-	if (n == 0)
-		return (0);
-	return (*s1 - *s2);
+	return (0);
 }
