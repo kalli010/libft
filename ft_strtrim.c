@@ -31,9 +31,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
-	end = ft_strlen(s1);
 	if (!s1 || !set)
 		return (NULL);
+	end = ft_strlen(s1);
 	while (s1[start] != '\0' && ft_check(s1[start], set) == 1)
 		start++;
 	while (end > start && ft_check(s1[end - 1], set))

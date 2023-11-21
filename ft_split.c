@@ -6,7 +6,7 @@
 /*   By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 15:42:39 by zelkalai          #+#    #+#             */
-/*   Updated: 2023/11/15 00:35:49 by zelkalai         ###   ########.fr       */
+/*   Updated: 2023/11/21 05:58:11 by zelkalai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,12 @@ char	**allocate_words(char const *s, char c, char **array, size_t word_count)
 		{
 			array[j] = allocate_and_copy_word(s, i, end);
 			if (!array[j])
-				return (NULL);
+			{
+				while (j + 1)
+					free(array[j--]);
+				free(array);
+				return (0);
+			}
 			j++;
 			i = end;
 		}
