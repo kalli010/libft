@@ -14,12 +14,12 @@
 
 int	ft_atoi(const char *str)
 {
-	int	r;
+	unsigned long long	r;
 	int	s;
 
 	r = 0;
 	s = 1;
-	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+	while (*str == ' ' || *str == '\t' || *str == '\v' || *str == '\n' || *str == '\r' || *str == '\f')
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -27,10 +27,14 @@ int	ft_atoi(const char *str)
 			s = -1;
 		str++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*str && *str >= '0' && *str <= '9')
 	{
 		r = r * 10 + (*str - '0');
 		str++;
 	}
-	return (r * s);
+	if (r > 9223372036854775807 && s == 1)
+		return (-1);
+	if (r > 9223372036854775807 && s == -1)
+		return (0);
+	return ((int)r * s);
 }

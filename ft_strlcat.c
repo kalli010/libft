@@ -19,13 +19,13 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	size_t	s;
 	size_t	d;
 
+	slen = ft_strlen(src);
+	if (!dest && dstsize == 0)
+		return (slen);
 	dlen = ft_strlen(dest);
 	d = dlen;
 	s = 0;
-	slen = ft_strlen(src);
-	if (!dest)
-		return (slen);
-	if (dstsize <= dlen)
+	if (dstsize == 0 || dstsize <= dlen)
 		return (dstsize + slen);
 	while (d < dstsize - 1 && src[s] != '\0')
 	{

@@ -29,10 +29,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	i;
 
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	i = 0;
 	start = 0;
-	if (!s1 || !set)
-		return (NULL);
 	end = ft_strlen(s1);
 	while (s1[start] != '\0' && ft_check(s1[start], set) == 1)
 		start++;

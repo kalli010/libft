@@ -70,7 +70,10 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-bonus:	$(OBJB)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus:	$(OBJB) $(NAME)
 	$(AR) $(NAME) $(OBJB)
 
 clean:
