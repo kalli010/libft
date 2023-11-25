@@ -14,17 +14,24 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*array;
-	size_t	a;
+	void	*p;
+	size_t	t;
 
-	a = nmemb * size;
+	t = nmemb * size;
+	if (nmemb > 0 && size > 0)
+	{
+		if (t / size != nmemb)
+			return (NULL);
+		p = malloc(t);
+		if (p == NULL)
+			return (NULL);
+	}
 	if (nmemb == 0 || size == 0)
-		return (malloc(0));
-	if (a / size != nmemb)
-		return (NULL);
-	array = malloc(a);
-	if (array == NULL)
-		return (NULL);
-	ft_bzero(array, a);
-	return (array);
+	{
+		p = malloc(1);
+		ft_bzero(p, 1);
+		return (p);
+	}
+	ft_bzero(p, t);
+	return (p);
 }

@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	unsigned long long	r;
+	int	r;
 	int	s;
 
 	r = 0;
@@ -32,9 +32,5 @@ int	ft_atoi(const char *str)
 		r = r * 10 + (*str - '0');
 		str++;
 	}
-	if (r > 9223372036854775807 && s == 1)
-		return (-1);
-	if (r > 9223372036854775807 && s == -1)
-		return (0);
 	return ((int)r * s);
 }

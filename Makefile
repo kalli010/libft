@@ -68,13 +68,13 @@ OBJB = $(SRCB:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+	$(AR) $(NAME) $@
 
 bonus:	$(OBJB) $(NAME)
-	$(AR) $(NAME) $(OBJB)
+	
 
 clean:
 	$(RM) $(OBJ) $(OBJB)
