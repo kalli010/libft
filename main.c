@@ -1,9 +1,19 @@
 #include "libft.h"
+#include <fcntl.h>
+
+void tpr(unsigned int i, char *c)
+{
+	while(c[i] != '\0')
+	{
+	     	if (c[i] >= 'a' && c[i] <= 'z')
+        		c[i] = c[i] - 32;
+		i++;
+	}
+}
 
 int main ()
 {
-	char s[] = "hello world";
-	char d[10];
-	size_t f = ft_strlcpy(s,s,sizeof(s));
-	printf("%lu\n%s",f,d);
+	int fd = open("test.txt", O_WRONLY | O_CREAT, 0644);
+	
+	ft_putnbr_fd(39852345,-1);
 }

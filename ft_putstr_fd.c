@@ -15,7 +15,7 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	
-	unsigned char	i;
+	unsigned int	i;
 	i = 0;
 	if (s == NULL || fd < 0)
 		return ;
