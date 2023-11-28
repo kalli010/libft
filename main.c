@@ -13,7 +13,17 @@ void tpr(unsigned int i, char *c)
 
 int main ()
 {
-	int fd = open("test.txt", O_WRONLY | O_CREAT, 0644);
-	
-	ft_putnbr_fd(39852345,-1);
+	char k = '\0';
+	t_list *s = ft_lstnew(0);
+	if (s == NULL)
+		return 0;
+	if (*(char  *)s->content == 0)
+		printf("1");
+	else
+		printf("-1");	
+	if (s->next == NULL)
+		printf("\n2");
+	else
+		printf("-2");
+	free(s);
 }
