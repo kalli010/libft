@@ -14,24 +14,23 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*p;
-	size_t	t;
+	#include "libft.h"
 
-	t = nmemb * size;
-	if (nmemb > 0 && size > 0)
-	{
-		if (t / size != nmemb)
-			return (NULL);
-		p = malloc(t);
-		if (p == NULL)
-			return (NULL);
-	}
-	if (nmemb == 0 || size == 0)
-	{
-		p = malloc(1);
-		ft_bzero(p, 1);
-		return (p);
-	}
-	ft_bzero(p, t);
-	return (p);
+void    *ft_calloc(size_t nelem, size_t elsize)
+{
+    char    *p;
+    size_t    total;
+
+    p = NULL;
+    total = nelem * elsize;
+    if (!total)
+        return (malloc(0));
+    if (nelem && ((total / nelem) != elsize))
+        return (NULL);
+    p = (void *)malloc(total);
+    if (!p)
+        return (NULL);
+    ft_bzero(p, total);
+    return ((void *)p);
+}
 }
