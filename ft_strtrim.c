@@ -6,7 +6,7 @@
 /*   By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:38:01 by zelkalai          #+#    #+#             */
-/*   Updated: 2023/12/01 16:31:33 by zelkalai         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:23:25 by zelkalai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ static int	ft_check(char c, const char *set)
 	return (0);
 }
 
-void	use_check(size_t *start, size_t *end,)
+void	use_check(const char *s1, const char *set, size_t *start, size_t *end)
 {
-	start = 0;
-	end = ft_strlen(s1);
-	while (s1[start] != '\0' && ft_check(s1[start], set) == 1)
-		start++;
-	while (end > start && ft_check(s1[end - 1], set))
-		end--;
+	*start = 0;
+	*end = ft_strlen(s1);
+	while (s1[*start] != '\0' && ft_check(s1[*start], set) == 1)
+		(*start)++;
+	while (*end > *start && ft_check(s1[*end - 1], set) == 1)
+		(*end)--;
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -43,16 +43,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	if (!set)
 		return (ft_strdup(s1));
-	i = 0;
-	use_check(&start, &end);
-	str = (char *)malloc(sizeof(*str) * (end - start + 1));
+	use_check(s1, set, &start, &end);
+	str = (char *)malloc(sizeof(*str) * (end - start + 1) + 1);
 	if (!str)
 		return (NULL);
+	i = 0;
 	while (start < end)
 	{
-		str[i] = s1[start];
-		start++;
-		i++;
+		str[i++] = s1[start++];
 	}
 	str[i] = '\0';
 	return (str);
