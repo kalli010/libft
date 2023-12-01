@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 
 	if (!s)
-                return (NULL);
+		return (NULL);
 	slen = ft_strlen(s);
 	i = 0;
 	if (start >= slen)
