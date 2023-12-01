@@ -6,7 +6,7 @@
 /*   By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:38:01 by zelkalai          #+#    #+#             */
-/*   Updated: 2023/12/01 17:23:25 by zelkalai         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:12:59 by zelkalai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!set)
 		return (ft_strdup(s1));
 	use_check(s1, set, &start, &end);
-	str = (char *)malloc(sizeof(*str) * (end - start + 1) + 1);
+	str = (char *)malloc(sizeof(*str) * (end - start + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
