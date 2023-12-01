@@ -75,9 +75,6 @@ $(NAME): $(OBJ)
 
 bonus:	$(OBJB) $(NAME)
 	
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRCB)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJB)
 clean:
 	$(RM) $(OBJ) $(OBJB)
 

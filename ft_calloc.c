@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	#include "libft.h"
-
 void    *ft_calloc(size_t nelem, size_t elsize)
 {
     char    *p;
@@ -32,5 +28,4 @@ void    *ft_calloc(size_t nelem, size_t elsize)
         return (NULL);
     ft_bzero(p, total);
     return ((void *)p);
-}
 }
