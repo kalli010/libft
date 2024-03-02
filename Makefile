@@ -6,11 +6,11 @@
 #    By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:02:54 by zelkalai          #+#    #+#              #
-#    Updated: 2023/11/21 05:44:37 by zelkalai         ###   ########.fr        #
+#    Updated: 2024/03/02 15:46:18 by zelkalai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libft.a 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 AR = ar rc
@@ -72,6 +72,7 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 	$(AR) $(NAME) $@
+	@sleep 0.1
 
 bonus:	$(OBJB) $(NAME)
 	
