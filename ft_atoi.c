@@ -6,10 +6,10 @@
 /*   By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 00:23:56 by zelkalai          #+#    #+#             */
-/*   Updated: 2024/03/25 14:01:47 by zelkalai         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:02:22 by zelkalai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//
+
 #include "libft.h"
 
 int	ft_atoi(const char *str)
