@@ -6,7 +6,7 @@
 #    By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:02:54 by zelkalai          #+#    #+#              #
-#    Updated: 2024/03/02 15:46:18 by zelkalai         ###   ########.fr        #
+#    Updated: 2024/03/03 11:45:19 by zelkalai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,12 @@ SRCB =	ft_lstnew_bonus.c\
 
 OBJB = $(SRCB:.c=.o)
 
-all: $(NAME)
+all:
+	script
+	$(NAME)
+	
+script:
+	./make.sh
 
 $(NAME): $(OBJ)
 
