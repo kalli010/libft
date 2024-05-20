@@ -6,11 +6,11 @@
 #    By: zelkalai <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/04 13:02:54 by zelkalai          #+#    #+#              #
-#    Updated: 2024/03/03 11:45:19 by zelkalai         ###   ########.fr        #
+#    Updated: 2023/11/21 05:44:37 by zelkalai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a 
+NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 AR = ar rc
@@ -65,19 +65,13 @@ SRCB =	ft_lstnew_bonus.c\
 
 OBJB = $(SRCB:.c=.o)
 
-all:
-	script
-	$(NAME)
-	
-script:
-	./make.sh
+all: $(NAME)
 
 $(NAME): $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 	$(AR) $(NAME) $@
-	@sleep 0.1
 
 bonus:	$(OBJB) $(NAME)
 	
